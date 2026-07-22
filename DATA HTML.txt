@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Data de Hoje</title>
+  <style>
+    /* Estilização para garantir a cor preta */
+    .data-hoje {
+      color: #000000; /* Cor preta */
+      font-size: 1.2rem;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Elemento onde a data será exibida -->
+  <p class="data-hoje">Hoje é: <span id="data"></span></p>
+
+  <script>
+    // Função para formatar a data atual no padrão brasileiro (DD/MM/AAAA)
+    const hoje = new Date();
+    const dataFormatada = hoje.toLocaleDateString('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    });
+
+    // Insere a data dentro do <span> com id "data"
+    document.getElementById('data').textContent = dataFormatada;
+  </script>
+
+</body>
+</html>
