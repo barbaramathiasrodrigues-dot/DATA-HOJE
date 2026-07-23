@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Bárbara - Instagram Feed</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --card-bg: #ffffff;
+      --text-main: #2f3437;
+      --text-muted: #787774;
+      --border-color: #e9e9e7;
+      --accent-color: #000000;
+    }
+
+    /* Suporte ao Modo Escuro do Notion */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #191919;
+        --card-bg: #202020;
+        --text-main: rgba(255, 255, 255, 0.9);
+        --text-muted: #9b9a97;
+        --border-color: #2f2f2f;
+        --accent-color: #ffffff;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: transparent;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      color: var(--text-main);
+    }
+
+    .instagram-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 800px; /* Ajustado para acomodar bem o feed */
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      text-align: center;
+    }
+
+    /* Cabeçalho / Perfil */
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .avatar-container {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      padding: 3px;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: var(--card-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avatar-inner span {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #dc2743;
+    }
+
+    .profile-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 2px;
+    }
+
+    .profile-handle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .btn-instagram {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 8px 20px;
+      border-radius: 8px;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-instagram:hover {
+      opacity: 0.85;
+    }
+
+    /* Container do SnapWidget Responsivo */
+    .snapwidget-container {
+      width: 100%;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .snapwidget-container iframe {
+      max-width: 100% !important;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="instagram-card">
+    
+    <!-- Cabeçalho do Perfil -->
+    <div class="profile-header">
+      <div class="avatar-container">
+        <div class="avatar-inner">
+          <span>SB</span>
+        </div>
+      </div>
+      <h2 class="profile-title">Studio Bárbara</h2>
+      <p class="profile-handle">@studio_da_barbara</p>
+      <a href="https://www.instagram.com/studio_da_barbara/" target="_blank" class="btn-instagram">
+        Ver no Instagram ↗
+      </a>
+    </div>
+
+    <!-- SnapWidget do Feed -->
+    <div class="snapwidget-container">
+      <!-- SnapWidget -->
+      <iframe src="https://snapwidget.com/embed/1127527" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; max-width:765px; height:510px" title="Posts from Instagram"></iframe>
+    </div>
+
+  </div>
+
+</body>
+</html>
